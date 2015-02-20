@@ -1,3 +1,5 @@
+Project Diary
+
 2015-02-20
 Seminarium 1 with short presentations. 
 We decided to meet next Wednesday at 17.00 and Thursday, the same time. 
