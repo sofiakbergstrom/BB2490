@@ -12,7 +12,7 @@ I have copied all raw project data to my home directory in Uppmax to be able to 
 
 As a small test, ran fastQC in one sample, got weird results. For example there seem to be an excellent read quality:
 
-![Read quality](https://raw.githubusercontent.com/guillermo-carrasco/bio_data_analysis/master/project/results/2015-02-26/1_140828_AHA36KADXX_P1185_402_1_fastqc/Images/per_base_quality.png)
+![Read quality](https://raw.githubusercontent.com/guillermo-carrasco/bio_data_analysis/master/project/results/2015-02-26/1_140828_AHA36KADXX_P1185_402_1_fastqc_0.7/Images/per_base_quality.png)
 
 But the sequence length distribution doesn't correspond to the expected length of miRNA data:
 
