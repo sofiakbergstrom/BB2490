@@ -28,7 +28,19 @@ GC content seems pretty bad as well...
 
 **Meeting with Sofia and Yim**
 
+We have been talking about how to organize the project, we've decided to use [Trello](https://trello.com/b/ilZxZc99/mirna-qc-metrics-project) to
+organize tasks and ideas.
 
+It is difficult to organize the project given the short time that we have... We don't
+have very clear what can be a realistic goal for the project. To begin with, we will
+start by trying the selected tools with the project data, just to see what kind of
+results we get.
+
+A more precise organization is in Trello, but basically we've divided the tools
+we are going to test between us, and we will share results in Trello/GitHub
+
+I gave Sofia and Yim a brief introduction to Git/GitHub, they are really wanting to
+learn :-), problem is again the short time we have for this project. We will see.
 
 ### 2015-02-24
 
