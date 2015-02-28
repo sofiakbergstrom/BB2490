@@ -11,7 +11,35 @@ don't know..
 command line:
 `$ cutadapt -e ERROR-RATE -a ADAPTER-SEQUENCE input.fastq > output.fastq`
 
-I'll test just with one sample and see what comes out: `cutadapt 1_140828_AHA36KADXX_P1185_402_1.fastq.gz > cutadapt/1_140828_AHA36KADXX_P1185_402_1.fastq` and precisely, you need to provide at least one adapter sequence. 
+I'll test just with one sample and see what comes out: `cutadapt 1_140828_AHA36KADXX_P1185_402_1.fastq.gz > cutadapt/1_140828_AHA36KADXX_P1185_402_1.fastq` and precisely, you need to provide at least one adapter sequence.
+
+You only need the adapter that was ligated to the 3' end of the sequence:
+
+```
+-a ADAPTER, --adapter=ADAPTER
+                        Sequence of an adapter that was ligated to the 3' end.
+                        The adapter itself and anything that follows is
+                        trimmed. If the adapter sequence ends with the '$'
+                        character, the adapter is anchored to the end of the
+                        read and only found if it is a suffix of the read.
+```
+
+I've ran the program with the adapter sequence `TGGAATTCTCGGGTGCCAAGG` (which
+I've found that they use as default [here](https://github.com/ewels/miRNA_processing/blob/master/pipeline.py#L204)), until I discover which is the real adapter sequence.
+
+`cutadapt -a TGGAATTCTCGGGTGCCAAGG 1_140828_AHA36KADXX_P1185_402_1.fastq.gz > cutadapt/1_140828_AHA36KADXX_P1185_402_1.fastq 2> cutadapt/1_140828_AHA36KADXX_P1185_402_1.stats`
+
+The program gives you some nice stats that you can find [here](https://raw.githubusercontent.com/guillermo-carrasco/bio_data_analysis/master/project/results/2015-02-28/1_140828_AHA36KADXX_P1185_402_1_cutadapt_stats.stats) for this particular sample with that particular adapter.
+
+One interesting point is the number of trimmed reads, which is 52.6%, **maybe if we look for the reverse complement of the adapter we'll find more?**. TODO/To research.
+
+Just to see the difference, I've ran fastqc 0.11.2 again against that sample **after** trimming. The results are quite different, for example I've got a very different length distribution:
+
+![Length distribution after trimming](https://raw.githubusercontent.com/guillermo-carrasco/bio_data_analysis/master/project/results/2015-02-28/1_140828_AHA36KADXX_P1185_402_1_fastqc_0.11.2_after_trimming/Images/sequence_length_distribution.png)
+
+This is still quite bad, as it looks like most of the reads are still 48-51 nucleotides long, even though now we have a small pick (+1 million reads) of reads with length 18-25, which is what we want.
+
+**Question:** Is this because the data is bad? Should we play more with cutadapt options?
 
 ### 2015-02-26
 
