@@ -1,5 +1,18 @@
 # Project diary
 
+### 2015-02-28
+
+Exploring [cutadapt](https://github.com/marcelm/cutadapt) for adapter sequence trimming.
+After the first test analysis with FastQC it is clear that the first step to carry on is adapter trimming. Cutadapt has a **long** help string... There is an example in which apparently you have to specify the adapter sequence, that we
+don't know..
+
+
+>Assuming your sequencing data is available as a FASTQ file, use this
+command line:
+`$ cutadapt -e ERROR-RATE -a ADAPTER-SEQUENCE input.fastq > output.fastq`
+
+I'll test just with one sample and see what comes out: `cutadapt 1_140828_AHA36KADXX_P1185_402_1.fastq.gz > cutadapt/1_140828_AHA36KADXX_P1185_402_1.fastq` and precisely, you need to provide at least one adapter sequence. 
+
 ### 2015-02-26
 
 I have copied all raw project data to my home directory in Uppmax to be able to share it with Sofia and Yim, the data consists on:
