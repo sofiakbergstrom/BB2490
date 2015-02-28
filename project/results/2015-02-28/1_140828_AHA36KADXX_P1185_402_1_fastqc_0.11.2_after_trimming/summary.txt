@@ -1,0 +1,12 @@
+PASS	Basic Statistics	1_140828_AHA36KADXX_P1185_402_1.fastq
+PASS	Per base sequence quality	1_140828_AHA36KADXX_P1185_402_1.fastq
+WARN	Per tile sequence quality	1_140828_AHA36KADXX_P1185_402_1.fastq
+PASS	Per sequence quality scores	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Per base sequence content	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Per sequence GC content	1_140828_AHA36KADXX_P1185_402_1.fastq
+PASS	Per base N content	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Sequence Length Distribution	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Sequence Duplication Levels	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Overrepresented sequences	1_140828_AHA36KADXX_P1185_402_1.fastq
+PASS	Adapter Content	1_140828_AHA36KADXX_P1185_402_1.fastq
+FAIL	Kmer Content	1_140828_AHA36KADXX_P1185_402_1.fastq
