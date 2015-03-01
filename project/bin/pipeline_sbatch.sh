@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -p core -n 8
-#SBATCH -t 4-00:00:00
+#SBATCH -t 1-00:00:00
 #SBATCH -A g2015009
 #SBATCH --mail-user guillermo.carrasco@scilifelab.se
 #SBATCH --mail-type ALL
@@ -26,4 +26,4 @@ ref="/pica/data/uppnex/reference/biodata/genomes/Hsapiens/GRCh37/bowtie/GRCh37"
 gtf="/pica/data/uppnex/reference/biodata/genomes/Hsapiens/GRCh37/annotation/Homo_sapiens.GRCh37.73.gtf"
 miRBase="$PROJECT_HOME/src/miRNA_processing"
 output=${sample}_out
-python $PROJECT_HOME/scr/miRNA_processing/pipeline.py -r ${ref} -g ${gtf} -m ${miRBase} -o ${output} -n 8 -k -f ${filelist[@]}
+python $PROJECT_HOME/src/miRNA_processing/pipeline.py -r ${ref} -g ${gtf} -m ${miRBase} -o ${output} -n 8 -k -f ${filelist[@]}
