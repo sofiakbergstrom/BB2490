@@ -2,6 +2,16 @@
 
 ### 2015-02-28
 
+I've found the data for the third project :-) New dataset is for this project is:
+
+* 16 samples
+* 62 FASTQ files (several samples ran on multiple lanes, single ended reads)
+* 5.6GB more data
+
+Ran the pipeline using [this](https://github.com/guillermo-carrasco/bio_data_analysis/blob/master/project/bin/pipeline_sbatch.sh) sbatch script, waiting for the results... 
+
+### 2015-02-28
+
 Exploring [cutadapt](https://github.com/marcelm/cutadapt) for adapter sequence trimming.
 After the first test analysis with FastQC it is clear that the first step to carry on is adapter trimming. Cutadapt has a **long** help string... There is an example in which apparently you have to specify the adapter sequence, that we
 don't know..
