@@ -41,6 +41,16 @@ This is still quite bad, as it looks like most of the reads are still 48-51 nucl
 
 **Question:** Is this because the data is bad? Should we play more with cutadapt options?
 
+**NOTE**: The data has been sequenced using the Illumina Kit TrueSeq small RNA, and looking at [the documentation](http://supportres.illumina.com/documents/documentation/chemistry_documentation/experiment-design/illumina-customer-sequence-letter.pdf), in page 15 I discovered that the sequence we are using as default is precisely the Illumina adapter for this protocol.
+
+[Phil's miRNA pipeline](https://github.com/ewels/miRNA_processing) does all what we need. After understanding the
+tools it uses, we should use this pipeline and focus on the results.
+
+I am going to try to find more data we can use. There is more data from one of the project that is corrupted due
+to an Uppmax data loss, I'll try to recover it and reprocess it from our backups... Found the two runs that have the third's project data in swestore. Will try to fetch and process them.
+
+Trying `miRNA_processing` pipeline
+
 ### 2015-02-26
 
 I have copied all raw project data to my home directory in Uppmax to be able to share it with Sofia and Yim, the data consists on:
