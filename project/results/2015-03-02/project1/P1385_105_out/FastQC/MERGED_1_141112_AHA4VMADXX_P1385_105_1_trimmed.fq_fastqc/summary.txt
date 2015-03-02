@@ -1,0 +1,12 @@
+PASS	Basic Statistics	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+PASS	Per base sequence quality	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+PASS	Per tile sequence quality	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+PASS	Per sequence quality scores	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+FAIL	Per base sequence content	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+FAIL	Per sequence GC content	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+PASS	Per base N content	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+WARN	Sequence Length Distribution	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+FAIL	Sequence Duplication Levels	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+FAIL	Overrepresented sequences	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+PASS	Adapter Content	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
+WARN	Kmer Content	MERGED_1_141112_AHA4VMADXX_P1385_105_1_trimmed.fq
