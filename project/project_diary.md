@@ -9,14 +9,6 @@ directory and will redirect the output to my home, should fit, hopefully.
 Also, found some bugs in the sbatch script that was not creating the output directory
 as I wanted, fixed them, new version in GitHub.
 
-### 2015-02-28
-
-I've found the data for the third project :-) New dataset is for this project is:
-
-* 16 samples
-* 62 FASTQ files (several samples ran on multiple lanes, single ended reads)
-* 5.6GB more data
-
 Ran the pipeline using [this](https://github.com/guillermo-carrasco/bio_data_analysis/blob/master/project/bin/pipeline_sbatch.sh) sbatch script, waiting for the results...
 
 Commands ran (inside the `results/2014-03-02`) directory:
@@ -66,6 +58,23 @@ Running jobs:
  4783810      core           P1381_115_miRNA    guilc       g2015009  R 2015-03-02T16:42:14    4:48:35      1    8 m83
  4783811      core           P1381_116_miRNA    guilc       g2015009  R 2015-03-02T16:42:17    4:48:38      1    8 m172
 ```
+
+**Update**: Jobs have failed in the htseq_counts step, but at least we've got the
+FastQC data for all the samples, results directory updated. Command used to unzip
+all results at once:
+
+```
+for d in `ls -d --color=never project*/*out/FastQC`; do cd $d && unzip *zip && rm *zip && cd ../../..; done
+```
+
+### 2015-02-28
+
+I've found the data for the third project :-) New dataset is for this project is:
+
+* 16 samples
+* 62 FASTQ files (several samples ran on multiple lanes, single ended reads)
+* 5.6GB more data
+
 
 ### 2015-02-28
 
