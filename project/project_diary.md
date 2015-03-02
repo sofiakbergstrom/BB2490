@@ -1,5 +1,14 @@
 # Project diary
 
+### 2015-03-02
+
+Running the pipeline on all the data filled my home directory pretty quickly so
+the job was killed and the results lost. I have then moved the data to the project
+directory and will redirect the output to my home, should fit, hopefully.
+
+Also, found some bugs in the sbatch script that was not creating the output directory
+as I wanted, fixed them, new version in GitHub.
+
 ### 2015-02-28
 
 I've found the data for the third project :-) New dataset is for this project is:
@@ -8,7 +17,55 @@ I've found the data for the third project :-) New dataset is for this project is
 * 62 FASTQ files (several samples ran on multiple lanes, single ended reads)
 * 5.6GB more data
 
-Ran the pipeline using [this](https://github.com/guillermo-carrasco/bio_data_analysis/blob/master/project/bin/pipeline_sbatch.sh) sbatch script, waiting for the results... 
+Ran the pipeline using [this](https://github.com/guillermo-carrasco/bio_data_analysis/blob/master/project/bin/pipeline_sbatch.sh) sbatch script, waiting for the results...
+
+Commands ran (inside the `results/2014-03-02`) directory:
+
+```bash
+for i in {101..114}; do s=P1385_${i}; sbatch -J ${s}_miRNA -e ${s}_miRNA.err -o ${s}_miRNA.out ../../bin/pipeline_sbatch.sh $s <project_name>; done
+```
+
+(project name correspond to each of the three projects we are working with)
+
+And jobs are running...
+
+```
+(master)guilc@milou-b:~/repos_and_codes/bio_data_analysis/project/results/2015-03-02 (master)$ jobinfo -u guilc
+
+CLUSTER: milou
+Running jobs:
+   JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
+ 4783781      core           P1385_101_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m118
+ 4783782      core           P1385_102_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m118
+ 4783783      core           P1385_103_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m65
+ 4783785      core           P1385_105_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m87
+ 4783786      core           P1385_106_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m85
+ 4783784      core           P1385_104_miRNA    guilc       g2015009  R 2015-03-02T16:31:29    4:37:50      1    8 m180
+ 4783787      core           P1385_107_miRNA    guilc       g2015009  R 2015-03-02T16:32:31    4:38:52      1    8 m60
+ 4783788      core           P1385_108_miRNA    guilc       g2015009  R 2015-03-02T16:32:31    4:38:52      1    8 m67
+ 4783789      core           P1385_109_miRNA    guilc       g2015009  R 2015-03-02T16:33:31    4:39:52      1    8 m54
+ 4783790      core           P1385_110_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m22
+ 4783791      core           P1385_111_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m100
+ 4783792      core           P1385_112_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m70
+ 4783793      core           P1385_113_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m189
+ 4783794      core           P1385_114_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m84
+ 4783796      core           P1381_101_miRNA    guilc       g2015009  R 2015-03-02T16:34:32    4:40:53      1    8 m208
+ 4783797      core           P1381_102_miRNA    guilc       g2015009  R 2015-03-02T16:35:05    4:41:26      1    8 m184
+ 4783798      core           P1381_103_miRNA    guilc       g2015009  R 2015-03-02T16:35:05    4:41:26      1    8 m96
+ 4783799      core           P1381_104_miRNA    guilc       g2015009  R 2015-03-02T16:35:20    4:41:41      1    8 m197
+ 4783800      core           P1381_105_miRNA    guilc       g2015009  R 2015-03-02T16:36:21    4:42:42      1    8 m32
+ 4783801      core           P1381_106_miRNA    guilc       g2015009  R 2015-03-02T16:37:03    4:43:24      1    8 m105
+ 4783802      core           P1381_107_miRNA    guilc       g2015009  R 2015-03-02T16:37:18    4:43:39      1    8 m86
+ 4783803      core           P1381_108_miRNA    guilc       g2015009  R 2015-03-02T16:38:10    4:44:31      1    8 m33
+ 4783804      core           P1381_109_miRNA    guilc       g2015009  R 2015-03-02T16:38:59    4:45:20      1    8 m52
+ 4783805      core           P1381_110_miRNA    guilc       g2015009  R 2015-03-02T16:40:12    4:46:33      1    8 m82
+ 4783806      core           P1381_111_miRNA    guilc       g2015009  R 2015-03-02T16:40:38    4:46:59      1    8 m45
+ 4783807      core           P1381_112_miRNA    guilc       g2015009  R 2015-03-02T16:41:35    4:47:56      1    8 m85
+ 4783808      core           P1381_113_miRNA    guilc       g2015009  R 2015-03-02T16:41:57    4:48:18      1    8 m98
+ 4783809      core           P1381_114_miRNA    guilc       g2015009  R 2015-03-02T16:41:57    4:48:18      1    8 m63
+ 4783810      core           P1381_115_miRNA    guilc       g2015009  R 2015-03-02T16:42:14    4:48:35      1    8 m83
+ 4783811      core           P1381_116_miRNA    guilc       g2015009  R 2015-03-02T16:42:17    4:48:38      1    8 m172
+```
 
 ### 2015-02-28
 
