@@ -3,6 +3,8 @@
 ### 2015-03-03
 
 Second seminar presentation today. Slides in the repo `project/doc/presentations`.
+
+
 ### 2015-03-02
 
 Running the pipeline on all the data filled my home directory pretty quickly so
