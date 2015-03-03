@@ -1,5 +1,8 @@
 # Project diary
 
+### 2015-03-03
+
+Second seminar presentation today. Slides in the repo `project/doc/presentations`.
 ### 2015-03-02
 
 Running the pipeline on all the data filled my home directory pretty quickly so
@@ -66,6 +69,8 @@ all results at once:
 ```
 for d in `ls -d --color=never project*/*out/FastQC`; do cd $d && unzip *zip && rm *zip && cd ../../..; done
 ```
+
+Preparing the presentation for tomorrow.
 
 ### 2015-02-28
 
