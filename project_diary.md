@@ -1,4 +1,33 @@
 # Project Diary
+## 2015-02-04
+Uppmax is down. 
+We participated at a workshop at Scilife about miRNA. 
+We decides to do a heat map over length distribution. 
+
+I started to try to understand how to create a heat map.
+I used some available Basketball statistics, located in the following link: http://datasets.flowingdata.com/ppg2008.csv
+test <- read.csv("http://datasets.flowingdata.com/ppg2008.csv", sep = ",")
+# To sort the data. I sorted a column called PTS, but you can sort any column.
+test <- test[order(test$PTS),]
+# To name each row according to one of the columns (the column "name" in this case)
+row.names(test) <-data$Name
+# To get rid of the column that stores the names (since we called the row according to the name, I wont need that anymore)
+test <- test[,2:20]
+#To change the data into a matrix format
+test_matrix <- data.matrix(test)
+# Create the heatmap!
+nba_heatmap <-heatmap(nba_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10))
+
+The next step is to do this on our data. 
+
+
+## 2015-03-03
+Seminar 2
+
+## 2015-03-02
+Me and Guillermo created the presenation for seminar2. 
+One recommendation for the other project will be to use Trello and one problem that we have had are the limited space available at our home directories at Uppmax. 
+
 ## 2015-02-26
 We has a project meeting were we decided to use trello.com as our project platform were we could discuss problems, add things that we should do and so on. Guillermo had tested FASTQC and showed us the results. The average length was around 50, but this is probably due to the fact that the adapters hadn't been removed. 
 
@@ -9,6 +38,7 @@ Some questions that came up during the meeting:
 * How and why do we use insert length as a quality check? 
 
 Me and Yim signed the NDA form which means that we are allowed access to the data. 
+I copied the data to my home directory in Uppmax. 
 
 ## 2015-02-25
 Read two articles:
