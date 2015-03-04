@@ -27,7 +27,7 @@ test_matrix <- data.matrix(test)
 
 Create the heatmap!
 
-nba_heatmap <-heatmap(nba_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10))
+test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10))
 
 The next step is to do this on our data. 
 
