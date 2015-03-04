@@ -6,16 +6,27 @@ We decides to do a heat map over length distribution.
 
 I started to try to understand how to create a heat map.
 I used some available Basketball statistics, located in the following link: http://datasets.flowingdata.com/ppg2008.csv
+
 test <- read.csv("http://datasets.flowingdata.com/ppg2008.csv", sep = ",")
-To sort the data. I sorted a column called PTS, but you can sort any column. \
+
+To sort the data. I sorted a column called PTS, but you can sort any column.
+
 test <- test[order(test$PTS),]
+
 To name each row according to one of the columns (the column "name" in this case)
+
 row.names(test) <-data$Name
+
 To get rid of the column that stores the names (since we called the row according to the name, I wont need that anymore)
+
 test <- test[,2:20]
+
 To change the data into a matrix format
+
 test_matrix <- data.matrix(test)
+
 Create the heatmap!
+
 nba_heatmap <-heatmap(nba_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10))
 
 The next step is to do this on our data. 
