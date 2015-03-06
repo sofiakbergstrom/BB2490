@@ -1,4 +1,11 @@
 # Project Diary
+## 2015-02-06
+Our goal today is to create heatmaps on our data. Me and Yim tryed to do this on Project 1 and Project 2. We used the length distribution that was located in fastaqc_data.txt file that was created for each sample when doing the FastaQC part. We extracted the length distribution and put in a file and created a heat map for each project. 
+
+First we wanted to do all samples in the same heat map, but the different projects didn't range between the same length. Project 1 ranges between a length of 18 to 101, and prpject 2 ranges from 18-51. An other difference is that project one takes steps of two length at a time, thay used 18-19, 20-21, 22-23 an so on. And project 2 have different length distribution number for each length. 
+
+
+
 ## 2015-02-04
 Uppmax is down. 
 We participated at a workshop at Scilife about miRNA. 
@@ -31,6 +38,7 @@ test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256)
 
 The next step is to do this on our data. 
 
+I also showed Yim how she could create a heat map, and how to use R. 
 
 ## 2015-03-03
 Seminar 2
