@@ -14,9 +14,12 @@ We wanted to change the columns names (they were all the format X18, X19 and so 
 colnames(test) <- c("18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51")
 
 test_matrix <- data.matrix(test)
+
 test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution")
 
 I added a title called Length Distribution. 
+
+I also wanted to add a dendrogram to the rows, but it seems like I need to use heatmap.2() and I can't figure out how to install that package. It shouldn't be that hard but I just isn't working. 
 
 
 ## 2015-02-04
