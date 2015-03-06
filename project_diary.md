@@ -20,6 +20,8 @@ test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256)
 I added a title called Length Distribution. 
 
 I also wanted to add a dendrogram to the rows, but it seems like I need to use heatmap.2() and I can't figure out how to install that package. It shouldn't be that hard but I just isn't working. 
+If I get it to work, the last command should be: 
+test_heatmap <-heatmap.2(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", dendrogram = "rows")
 
 
 ## 2015-02-04
