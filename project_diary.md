@@ -15,14 +15,15 @@ colnames(test) <- c("18","19","20","21","22","23","24","25","26","27","28","29",
 
 test_matrix <- data.matrix(test)
 
-test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution")
+test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", xlab = "Length Distribution", ylab = "Sample")
 
-I added a title called Length Distribution. 
+I added a title called Length Distribution and x-label and y-label. 
 
 I also wanted to add a dendrogram to the rows, but it seems like I need to use heatmap.2() and I can't figure out how to install that package. It shouldn't be that hard but I just isn't working. 
 If I get it to work, the last command should be: 
 test_heatmap <-heatmap.2(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", dendrogram = "rows")
 
+We tryed to fix the layout of the plots by changing the margins and so on. 
 
 ## 2015-02-04
 Uppmax is down. 
