@@ -15,7 +15,7 @@ test <- test[order(test$PTS),]
 
 To name each row according to one of the columns (the column "name" in this case)
 
-row.names(test) <-data$Name
+row.names(test) <-test$Name
 
 To get rid of the column that stores the names (since we called the row according to the name, I wont need that anymore)
 
