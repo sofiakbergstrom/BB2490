@@ -132,6 +132,11 @@ Running jobs:
 
 ```
 
+### Problem
+The pipeline does not accept compressed FASTQ files... so I have to uncompress them and
+re-run the analysis
+
+
 ### 2015-03-05
 
 We attended a miRNA seminar given by [Marc Friedländer](http://www.scilifelab.se/researchers/marc-friedlander/).
