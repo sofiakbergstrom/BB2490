@@ -1,5 +1,33 @@
 # Project diary
 
+### 2015-03-07
+
+In order to solve the space problems **and** the privacy problems, Phil gave us access
+to the applications project, `b2013064`, so that we can put our data and results there.
+
+Due to a [hardware problem](http://www.uppmax.uu.se/system-news/hardware-related-problems-with-gulo-glob-and-some-nobackup) that Uppmax had a few weeks ago, we have some data corruption for
+some samples in some projects. However, for the scope of this project we have
+enough data. This is the final dataset that we are going to analyze:
+
+* 6 projects
+* 113 samples in total
+* 294 fastq files in total
+* 45 GB of data in total
+
+**Bash tricks**:
+
+To count the number of samples within a project directory:
+
+Given the following FASTQ naming format `SAMPLE_NAME_MORE_FIELDS.fastq.gz`
+
+```bash
+$> ls <project_dir> --color=never | cut -f 1,2 -d'_' | uniq -c
+```
+
+Count the number of files in a directory (including subdirs) following a pattern:
+`find . -type f -name *fastq* | wc -l`
+
+
 ### 2015-03-05
 
 We attended a miRNA seminar given by [Marc Friedländer](http://www.scilifelab.se/researchers/marc-friedlander/).
