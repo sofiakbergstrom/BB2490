@@ -1,5 +1,25 @@
 # Project diary
 
+### 2015-03-05
+
+We attended a miRNA seminar given by [Marc Friedländer](http://www.scilifelab.se/researchers/marc-friedlander/).
+It was of high interest to us as we he has been studying miRNA for 9 years.
+
+After the seminar we had a small informal chat with Marc in where we explained
+our project. He offered us his pipeline, which is functional, so that we can focus
+on the results. We also showed him some results and that was helpful. This is how we
+will proceed now, given the time we have:
+
+* Guillermo:
+    * Collect more data from all possible miRNA projects in production/applications group.
+    * Run SMARTAR (Marc's pipeline) on all our samples
+    * Make results accessible to Sofia/Yim
+* Sofia and Yim
+    * Experiment with the results that we already have to construct a heatmap for
+    the lengths distributions, try to cluster per-project if possible.
+* Everyone:
+    * Just... keep studying the results.
+
 ### 2015-03-03
 
 Second seminar presentation today. Slides in the repo `project/doc/presentations`.
