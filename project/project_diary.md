@@ -27,6 +27,110 @@ $> ls <project_dir> --color=never | cut -f 1,2 -d'_' | uniq -c
 Count the number of files in a directory (including subdirs) following a pattern:
 `find . -type f -name *fastq* | wc -l`
 
+##### Running the pipeline
+
+* Pipeline is located in `/proj/b2013064/nobackup/BB2490_KTH_miRNA_project/smartar`
+* Project data located in `/proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data`
+
+The pipeline is written in Perl, so first I have to install perl dependencies.
+[Howto here](http://www.uppmax.uu.se/faq/installing-local-perl-packages).
+
+Installing perl dependencies:
+
+```
+$> cpanm Parallel::ForkManager
+```
+
+And this is the pipeline usage:
+
+```
+SMARTAR_v1.0.9.pl config_file
+
+Evokes the full sRNA analysis.
+The config file should contain a tab separated list
+of fastq datasets and corresponding three-letter tags.
+
+-d directory to source
+-e directory to static files
+-f adapter sequence
+-g illumina phred encoding
+-j omit pre-processing
+-k omit quality test
+-l omit contamination test
+-m omit lengths
+-n omit mirdeep2
+-o omit seqbuster
+-p omit mapping
+-q omit intensities
+-r omit simple annotation
+-s omit vanilla annotation
+-t omit detailed annotation
+-u omit bedgraph files
+-v omit seqcluster
+-x omit exogen
+-y omit summary
+-z clean up
+```
+
+In order to run the pipeline, we need to create a `config.txt` file. This file is a
+2-column tab delimited file which's first column is the name of a fastq file and the
+second column is a 3-letter id. I'll name the fastq files like F01, F02, etc..
+
+On each project directory, I've run the one-liner to construct the `config.txt` file:
+
+```bash
+n=`ls -l | wc -l` && i=1 && for fastq in `find . -type f | sed 's|./||'`; do id=F$(printf "%02d" $i) && i=`expr $i + 1` && echo -e $fastq'\t'$id >> config.txt; done
+```
+
+Which will create a file like this:
+
+```
+P962_103_TTAGGC_L001_R1_001.fastq.gz    F01
+P962_105_ACAGTG_L001_R1_001.fastq.gz    F02
+P962_101_ATCACG_L002_R1_001.fastq.gz    F03
+P962_111_GGCTAC_L002_R1_001.fastq.gz    F04
+P962_106_GCCAAT_L001_R1_001.fastq.gz    F05
+P962_108_ACTTGA_L001_R1_001.fastq.gz    F06
+P962_104_TGACCA_L001_R1_001.fastq.gz    F07
+P962_110_TAGCTT_L001_R1_001.fastq.gz    F08
+P962_107_CAGATC_L002_R1_001.fastq.gz    F09
+P962_112_CTTGTA_L002_R1_001.fastq.gz    F10
+P962_106_GCCAAT_L002_R1_001.fastq.gz    F11
+P962_109_GATCAG_L002_R1_001.fastq.gz    F12
+P962_102_CGATGT_L001_R1_001.fastq.gz    F13
+P962_103_TTAGGC_L002_R1_001.fastq.gz    F14
+P962_107_CAGATC_L001_R1_001.fastq.gz    F15
+P962_105_ACAGTG_L002_R1_001.fastq.gz    F16
+P962_110_TAGCTT_L002_R1_001.fastq.gz    F17
+P962_109_GATCAG_L001_R1_001.fastq.gz    F18
+P962_101_ATCACG_L001_R1_001.fastq.gz    F19
+P962_108_ACTTGA_L002_R1_001.fastq.gz    F20
+P962_111_GGCTAC_L001_R1_001.fastq.gz    F21
+```
+
+After creating all configuration files, I've ran the pipeline for all projects
+with the following command:
+
+```
+for p in `ls -d --color=never [A-Z].*`; do mkdir ../results/$p && sbatch -J SMARTAR_$p -o ../results/$p/SMARTAR_$p.out -e ../results/$p/SMARTAR_$p.err run_smartar.sh $p $SMARTAT_PATH ; done
+```
+
+So they are being analyzed now:
+
+```
+(master)guilc@milou-b:/proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data$ jobinfo -u guilc
+
+CLUSTER: milou
+Running jobs:
+   JOBID PARTITION                      NAME     USER        ACCOUNT ST          START_TIME  TIME_LEFT  NODES CPUS NODELIST(REASON)
+ 4812486      core     SMARTAR_A.Simon_14_01    guilc       b2013064  R 2015-03-07T13:21:54    5:54:39      1    1 m158
+ 4812487      core  SMARTAR_C.Dixelius_13_05    guilc       b2013064  R 2015-03-07T13:21:54    5:54:39      1    1 m158
+ 4812488      core SMARTAR_J.Lundeberg_14_18    guilc       b2013064  R 2015-03-07T13:21:54    5:54:39      1    1 m164
+ 4812490      core   SMARTAR_O.Larsson_14_04    guilc       b2013064  R 2015-03-07T13:21:54    5:54:39      1    1 m167
+ 4812491      core SMARTAR_U.Pettersson_14_0    guilc       b2013064  R 2015-03-07T13:21:54    5:54:39      1    1 m167
+ 4812494      core    SMARTAR_N.Street_13_01    guilc       b2013064  R 2015-03-07T13:27:10    5:59:55      1    1 m164
+
+```
 
 ### 2015-03-05
 
