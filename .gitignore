@@ -1,0 +1,6 @@
+.DS*
+*pyc
+data
+*bam
+*fastq
+.*

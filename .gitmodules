@@ -1,0 +1,3 @@
+[submodule "project/src/miRNA_processing"]
+	path = project/src/miRNA_processing
+	url = https://github.com/SciLifeLab/miRNA_processing.git

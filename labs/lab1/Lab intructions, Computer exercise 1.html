@@ -1,0 +1,102 @@
+
+<!-- saved from url=(0083)http://statisticalbiotechnology.github.io/bb2490/computer_exercises/lab1/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<title>Lab intructions, Computer exercise 1</title>
+<style type="text/css"></style></head><body>
+<h4>BB2490/DD2399, Analysis of data from high-throughput molecular biology experiments</h4>
+<h2 align="center">Lab intructions, Computer exercise 1</h2><br>
+<font color="Crimson"><h2 align="center">Calculating FDRs and q-values</h2></font><br>
+
+
+<font color="Crimson"><h3>Data</h3></font>
+<a href="http://statisticalbiotechnology.github.io/bb2490/computer_exercises/lab1/lab1.xls">lab1.xls</a> &nbsp;(Please copy this spread sheet to your local drive)<br>
+This lab is based on the theory in Storey and Tibshirani's, <a href="http://www.pnas.org/content/100/16/9440.short">
+"Statistical significance for genomewide studies"</a>, PNAS, 2003. It will 
+be helpful to read it through in beforehand, and to have a copy of the article at hand.
+
+<font color="Crimson"><h3>Introduction</h3></font>
+<p>This computer exercise involves calculating false discovery rates (FDRs) for an LC-MS/MS high-throughput experiment, but
+the methods used here are generally applicable to any high-throughput data. We will employ the widely used Excel, or
+Open Office Spreadsheet, to perform the calculations, but other methods are also fine (python, perl, etc.). <br><br>
+
+After this exercise you will have to hand in a small text document (in .odt, .doc, .docx, .pdf or .rtf format) with answer to the questions. 
+Also include the graph created under point 4. The deadline for handing in the answers is one week after the laboratory exercise, and should be 
+done through e-mail to any of the teaching assistants.
+
+Please work in pairs, as long as possible, and hand in one file per group.
+
+<font color="Crimson"></font></p><h3><font color="Crimson">More about the data</font></h3>
+<p>You will be using a data set consisting of
+4 technical replicates each, of two <i>E. coli</i> samples spiked into a human epithelial kidney cell background.
+In these two samples, labelled 1x and 8x, peptides have been identified using tandem mass spectrometry. The
+peptides are represented on the different rows, and the purpose of the lab is to identify which peptides
+that differs in abundance between samples 1x and 8x.<br><br>
+
+The abundance of the peptides of each sample is indicated by the numbers in the columns marked with 1x or 8x. This
+number relates to the intensity of the peptide signal in the mass spectrometer.
+
+<font color="Crimson"></font></p><h3><font color="Crimson">Task</font></h3>
+
+<p> We will use a common statistical test to identify differences in signal strength, which we assume are related to difference in peptide concentration.
+Differences in peptide concentration can be naively determined by
+fold changes (log{8x/1x}) but more effectively determined by using a statistic such
+as the <i>t</i>-test. Below, we'll go through the task referring to the spreadsheet, if you're unfamiliar with Excel, feel free to 
+write a script to perform the test and the multiple hypothesis correction.</p>
+
+	<ol><li>Use the <i>t</i>-test for each peptide to determine if the amount of peptide in the 8x and the 1x data sample differs.</li>
+	<ul>
+		<li>In the <i>P</i>-value column, use the Excel "TTEST" function,  (ex: =TTEST(&lt;range-of-8x-values&gt;,&lt;range-of-1x-values&gt;,
+		    &lt;number-of-tails&gt;,&lt;<i>t</i>-test-type&gt;) )</li>
+		<li>The "TTEST" function takes four arguments: the first group of measurements, the second group of 
+                    measurements, the number of tails, and the type of t-test. The output is a p-value, indicating the probability that the
+		    two groups have an equal mean.</li>
+		<li>The number of tails in this case is 2, as we in principle have no idea which of the two groups has the highest mean. In a 1-tailed test,
+		    on the other hand, we assume that one of the groups is always larger.</li>
+		<li>The type of the t-test here is 3, which refers to that the two-samples have unequal variance.</li>
+        </ul>
+	<li>Sort data.</li>
+	<ul>
+		<li>Perform the <i>t</i>-test for all peptides in the spreadsheet.</li>
+		<li>Sort the fields in the sheet "sort" in accending p-value order using the dialog under "Data &gt; Sort".<br>
+		In the menu that shows up, select that you want to sort according to the column with the p-values.</li>
+</ul>
+	<li>Correct t-test p-values for multiple hypothesis testing by calculating the False Discovery Rate (FDR).</li>
+	<ul>
+	
+			<li>Note the number of peptides we're analyzing.</li>
+			<li>In a new column, for the <i>q</i> value, apply the formula: <br>
+			QVALUE = min(p-value threshold * total_number_of_peptides/rank_of_current_peptide, qvalue_for_peptide_one_row_below)<br>
+			See Equations on page 9443 of Storey and Tibshirani (PNAS, 2003).<br>
+			</li><li>Beneficially use the MIN() function, it outputs the smallest value of the two arguments. 
+            <b><font color="Crimson">QUESTION 1</font></b>: Why do we use the MIN-function? 
+			(Hint: look for <i>q</i> values in Storey and Tibshirani (PNAS, 2003))</li>
+			<li>Antoher useful function is the ROWS() function, which outputs the number of rows defined by the range.</li>
+			<li>In the cell below your last entry (probably R5002) enter the value 1.0.</li>
+			<li><b><font color="Crimson">QUESTION 2</font></b>: How many features are being significantly different at FDR=0.01?</li>
+	</ul>
+    	<li>Calcuation of the prior null probability, pi_0</li>
+	   	 <ul>
+			<li>In a new column, called PI0, apply the formula:<br>
+			pi0(lambda) = #{p&gt;lambda}/(num_rows*(1-lambda)), where lambda represents the <i>p</i>-value on each row.<br></li>
+			<li>Make a "chart" using the sequence "Insert &gt; Chart", and specify a scatterplot illustrating pi0(lambda) as a function of 
+			lambda (p-value). </li>
+			<li>Following the same reasoning as in Figure 3 of Storey and Tibshirani (PNAS, 2003), estimate pi0. </li>
+                        <li><b><font color="Crimson">QUESTION 3</font></b>: What is the value and meaning, in this case, of pi0?</li>
+        </ul>
+        <li>Calculate the FDR using pi0
+        <ul>
+			<li>Adjust your FDR calculation so that it incorporates the new pi0 estimate in the column FDR_with_pi0.</li>
+			<li><b><font color="Crimson">QUESTION 4</font></b>: How many features are now significantly different at the FDR=0.01? And 
+			how does this relate to the number of deviating features when pi0 was estimated as 1?</li>
+		</ul>
+	
+
+</li></ol>
+
+<font color="Crimson"><h3>Questions</h3></font>
+<p>Can be e-mailed to any of the Teaching assistants.
+
+
+</p></body></html>
