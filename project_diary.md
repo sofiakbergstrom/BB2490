@@ -1,5 +1,11 @@
 # Project Diary
-## 2015-02-06
+## 2015-03-08
+I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
+I'll continue trying to figure out how to change the heatmaps. 
+
+
+
+## 2015-03-06
 Our goal today is to create heatmaps on our data. Me and Yim tryed to do this on Project 1 and Project 2. We used the length distribution that was located in fastaqc_data.txt file that was created for each sample when doing the FastaQC part. We extracted the length distribution and put in a file and created a heat map for each project. 
 
 First we wanted to do all samples in the same heat map, but the different projects didn't range between the same length. Project 1 ranges between a length of 18 to 101, and prpject 2 ranges from 18-51. An other difference is that project 1 takes steps of two length at a time, they used 18-19, 20-21, 22-23 an so on. And project 2 have different length distribution number for each length. 
@@ -27,7 +33,7 @@ We tryed to fix the layout of the plots by changing the margins and so on.
 
 There were however some things in the two heatmaps that we didn't understand. The color for a sample didn't become brighter where they corresponded to a high count. We realized that the color described each column distribution. If a sample has a higher count than the other samples at a length of 18, that would be indicated by a brighter color. But if the samples count on the length 22 was much higher, but the difference between that sample and the other samples was smaller, the color would not be that bright. We don't want each column to have a color distribution relative to that particular length, we want the whole heatmap to have the same color for the same count. We need to figure out how to do that. 
 
-Uppmax is up and Guillermo has created a directory /proj/b2013064/nobackup/BB2490_KTH_miRNA_project in Uppmax where all our data and Marc Friedländer's pipeline SMARTAR are located. Neither me nor Yim can access that folder at the moment. 
+Uppmax is up and Phil has given us access to the application project b2013064. Guillermo has created a directory /proj/b2013064/nobackup/BB2490_KTH_miRNA_project where all our data and Marc Friedländer's pipeline SMARTAR are located. Neither me nor Yim can however access that folder at the moment. The final dataset that we will analyze consists of six projects with 113 samples in total.
 
 ## 2015-02-04
 Uppmax is down. 
@@ -82,6 +88,10 @@ Some questions that came up during the meeting:
 Me and Yim signed the NDA form which means that we are allowed access to the data. 
 I copied the data to my home directory in Uppmax. 
 
+We also decided to use GitHub. Guillermo has created a project directory and I can add it by using the following commands:
+git remote add guillermo https://github.com/guillermo-carrasco/bio_data_analysis.git
+git pull guillermo master 
+
 ## 2015-02-25
 Read two articles:
 * Next Generation sequencing of miRNAs – Strategies, Resources and Methods
@@ -89,7 +99,7 @@ Read two articles:
 
 Our meeting was canceled since Guillermo was ill. 
 
-I saw a couple of videos on youtube about miRNA just to get a better understanding of why they are important to invetigate and to get a better understanding of how they are generated. I also saw some videos describing the similarities and differences between miRNA and siRNA (which both regulate gene expression). 
+I saw a couple of videos on youtube about miRNA just to get a better understanding of why they are important to investigate and to get a better understanding of how they are generated. I also saw some videos describing the similarities and differences between miRNA and siRNA (which both regulate gene expression). 
 
 ## 2015-02-24
 Read two articles: 
