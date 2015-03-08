@@ -89,7 +89,9 @@ Me and Yim signed the NDA form which means that we are allowed access to the dat
 I copied the data to my home directory in Uppmax. 
 
 We also decided to use GitHub. Guillermo has created a project directory and I can add it by using the following commands:
+
 git remote add guillermo https://github.com/guillermo-carrasco/bio_data_analysis.git
+
 git pull guillermo master 
 
 ## 2015-02-25
