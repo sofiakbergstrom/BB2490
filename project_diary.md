@@ -8,7 +8,7 @@ I read the article for seminar 3 about poster presentation and looked at some sc
 3/6 projects are now finished in Uppmax. 
 If I write jobinfo -u guilc I can see the onces that are still running. 
 
-Yim succeded to fix the heat map for project 1 yesterday, yay! Now the colors depend on every column which mean that we can see that there are more reads with some lengths. 
+Yim succeded to fix the heat map for project 1 yesterday, yay! Now the colors depend on every column which mean that we can see that there are more reads of some lengths. 
 
 ## 2015-03-08
 I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
