@@ -26,7 +26,7 @@ row.names(test) <-test$Sample
 test <- test[,2:35]
 
 We wanted to change the columns names (they were all the format X18, X19 and so on). 
-colnames(test) <- c("18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51")
+colnames(test) <- c(18:51)
 
 test_matrix <- data.matrix(test)
 
