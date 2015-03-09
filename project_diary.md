@@ -1,9 +1,12 @@
 # Project Diary
+## 2015-03-09
+Guillermo teached me how to add pic to the diary. I will add some that I wanted to upload last week.
+I can't connect to csc where my txt-file is located with the data for project 2. I will try again later today. 
+The connection started to work and I have copied the files I needed. But now I can't connect to Uppmax...  
+
 ## 2015-03-08
 I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
-I'll continue trying to figure out how to change the heatmaps. 
-
-
+I'll continue trying to figure out how to change the heatmaps and how to convert the data from the fastaqc_data.txt files fast into the right format. 
 
 ## 2015-03-06
 Our goal today is to create heatmaps on our data. Me and Yim tryed to do this on Project 1 and Project 2. We used the length distribution that was located in fastaqc_data.txt file that was created for each sample when doing the FastaQC part. We extracted the length distribution and put in a file and created a heat map for each project. 
@@ -70,7 +73,8 @@ The next step is to do this on our data.
 I also showed Yim how she could create a heat map, and how to use R. 
 
 ## 2015-03-03
-Seminar 2
+Seminar 2. 
+Yim's flight was delayed so I and Guillermo did the presentation on out own. I presented the parts that Yim was supposed to present. 
 
 ## 2015-03-02
 Me and Guillermo created the presenation for seminar2. 
