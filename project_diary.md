@@ -5,9 +5,14 @@ I can't connect to csc where my txt-file is located with the data for project 2.
 The connection started to work and I have copied the files I needed. But now I can't connect to Uppmax...  
 I read the article for seminar 3 about poster presentation and looked at some scientific poster examples. I think we should have text boxes in one color and a thinner box in another color behinde those with the subtitles Method, Results, Conclusion and so on. I also think we should have a special box that are easily seen with our research question.    
 
+3/6 projects are now finished in Uppmax. 
+If I write jobinfo -u guilc I can see the onces that are still running. 
+
+Yim succeded to fix the heat map for project 1 yesterday, yay! Now the colors depend on every column which mean that we can see that there are more reads with some lengths. 
+
 ## 2015-03-08
 I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
-I'll continue trying to figure out how to change the heatmaps and how to convert the data from the fastaqc_data.txt files fast into the right format. 
+I'll continue trying to figure out how to change the heatmaps and how to convert the data from the fastaqc_data.txt files fast into the right format. Guillermo has started Marc's pipeline and I looked at the files, but the analysis of the six projects are not finished. 
 
 ## 2015-03-06
 Our goal today is to create heatmaps on our data. Me and Yim tryed to do this on Project 1 and Project 2. We used the length distribution that was located in fastaqc_data.txt file that was created for each sample when doing the FastaQC part. We extracted the length distribution and put in a file and created a heat map for each project. 
