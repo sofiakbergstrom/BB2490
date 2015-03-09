@@ -1,6 +1,19 @@
 # Project Diary
 ## 2015-03-09
-Guillermo teached me how to add pic to the diary. I will add some that I wanted to upload last week.
+Seminar 3. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
+
+We looked at the results from the projects that are done. We found a file that had each samples length count, we can use this to create the heatmap. These are located in six different folders, one for each project. Example for Simon's data:
+
+/proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data/A.Simon_14_01/lengths
+
+Me and Yim was suppose to look at the data that has been created and try to figure out what we want to do with it to be able to analyse it. But we couldn't connect to Uppmax. 
+
+I made a first draft on the poster according to the things I think is important (Clear, "airy", easy to follow).
+
+
+
+## 2015-03-09
+Guillermo teached me how to add pictures to the diary. I will add some that I wanted to upload last week.
 I can't connect to csc where my txt-file is located with the data for project 2. I will try again later today. 
 The connection started to work and I have copied the files I needed. But now I can't connect to Uppmax...  
 I read the article for seminar 3 about poster presentation and looked at some scientific poster examples. I think we should have text boxes in one color and a thinner box in another color behinde those with the subtitles Method, Results, Conclusion and so on. I also think we should have a special box that are easily seen with our research question.    
@@ -8,7 +21,7 @@ I read the article for seminar 3 about poster presentation and looked at some sc
 3/6 projects are now finished in Uppmax. 
 If I write jobinfo -u guilc I can see the onces that are still running. 
 
-Yim succeded to fix the heat map for project 1 yesterday, yay! Now the colors depend on every column which mean that we can see that there are more reads of some lengths. 
+Yim succeded to fix the heat map for project 1 yesterday, yay! I can't load gplot (which is needed for some of the heatmap tutorials) since I have an older version of R. That was the reason to why I couln't get heatmap.2() to work. But now, on Yim's heatmap, the colors depend on every column which mean that we can see that there are more reads of some lengths. 
 
 ## 2015-03-08
 I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
