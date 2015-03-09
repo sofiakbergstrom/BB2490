@@ -6,6 +6,8 @@ We looked at the results from the projects that are done. We found a file that h
 
 /proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data/A.Simon_14_01/lengths
 
+This length counts are not located in a long fastaQC-file as the files we looked at yesterday. This might make the script that should convert the data from all 113 samples into the right format easier. 
+
 Me and Yim was suppose to look at the data that has been created and try to figure out what we want to do with it to be able to analyse it. But we couldn't connect to Uppmax. 
 
 I made a first draft on the poster according to the things I think is important (Clear, "airy", easy to follow).
@@ -17,6 +19,8 @@ Guillermo teached me how to add pictures to the diary. I will add some that I wa
 I can't connect to csc where my txt-file is located with the data for project 2. I will try again later today. 
 The connection started to work and I have copied the files I needed. But now I can't connect to Uppmax...  
 I read the article for seminar 3 about poster presentation and looked at some scientific poster examples. I think we should have text boxes in one color and a thinner box in another color behinde those with the subtitles Method, Results, Conclusion and so on. I also think we should have a special box that are easily seen with our research question.    
+
+I tryed to write a script that will convert the data from all the different fastaQC-files and make them into a format that R can read. But I had some problems with the extraction of the right data from the files. I need to figure out a way to do that. 
 
 3/6 projects are now finished in Uppmax. 
 If I write jobinfo -u guilc I can see the onces that are still running. 
