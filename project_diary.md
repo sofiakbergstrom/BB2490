@@ -50,7 +50,10 @@ Uppmax is up and Phil has given us access to the application project b2013064. G
 ## 2015-02-04
 Uppmax is down. 
 We participated at a workshop at Scilife about miRNA. 
-We decides to do a heat map over length distribution. 
+We decided to work with Marc Friedländers pipeline instead of the first pipeline that we was supposed to use. 
+This new pipeline is however written in perl which non of us have any experience with. It should however not be that hard to modify it so that we can use it. 
+
+We decides to do a heat map over length distribution that we have for the two projects. 
 
 I started to try to understand how to create a heat map.
 I used some available Basketball statistics, located in the following link: http://datasets.flowingdata.com/ppg2008.csv
