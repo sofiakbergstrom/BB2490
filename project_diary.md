@@ -21,8 +21,11 @@ First we wanted to do all samples in the same heat map, but the different projec
 We converted the values into two fiels (called P1len.txt and P2len.txt for project 1 and 2 respectivelly), where each row corresponded to different samples and each value were separated by ",". 
 I worked on Project 2, and Yim worked on project 1.
 I used the following commands:
+
 test <- read.csv("P2len.txt", sep = ",")
+
 row.names(test) <-test$Sample
+
 test <- test[,2:35]
 
 We wanted to change the columns names (they were all the format X18, X19 and so on). 
