@@ -3,6 +3,7 @@
 Guillermo teached me how to add pic to the diary. I will add some that I wanted to upload last week.
 I can't connect to csc where my txt-file is located with the data for project 2. I will try again later today. 
 The connection started to work and I have copied the files I needed. But now I can't connect to Uppmax...  
+I read the article for seminar 3 about poster presentation and looked at some scientific poster examples. I think we should have text boxes in one color and a thinner box in another color behinde those with the subtitles Method, Results, Conclusion and so on. I also think we should have a special box that are easily seen with our research question.    
 
 ## 2015-03-08
 I managed to access our folder in Uppmax today, I do not know why it didn't work the other day. 
