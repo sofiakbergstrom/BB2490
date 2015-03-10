@@ -1,4 +1,75 @@
 # Project Diary
+## 2015-03-10
+I created a python script that converts all the 113 lng-files with length distribution into one single csv-file that can be used when creating a heatmap. 
+```
+#! /usr/bin/env python
+
+#Function 1: This function reads the files one by one and sends them to function 2. 
+def read_input_files(argv):
+	argv = argv[1:len(argv)-1]
+	count = 0
+	for element in argv:
+		if count < (len(argv)):
+			name = argv[count]
+			lng_file = open(argv[count])
+			function3 = get_sample_name(lng_file, name)
+			lng_file.close()
+		count += 1
+
+#Function 2: This function gets the right sample name and then sends the info to function 3
+def get_sample_name(lng_file, name):
+	sample = name[len(name)-7:len(name)-4]
+	if 'Simon' in name:
+		project = 'A.Simon'
+	elif 'Dixelius' in name:
+		project = 'C.Dixelius'
+	elif 'Lundeberg' in name:
+		project = 'J.Lundeberg'
+	elif 'Street' in name:
+		project = 'N.Street'
+	elif 'Larsson' in name:
+		project = 'O.Larsson'
+	elif 'Pettersson' in name:
+		project = 'U.Pettersson'
+	else:
+		print 'Something is wrong'
+	function3 = convert_file(lng_file, project, sample)
+
+#Function3: This function selects the read count and write them to an output in the right format
+def convert_file(lng_file, project, sample):
+	output_file.write(project +':' +sample)
+	for line in lng_file:
+		k = line.split()
+		if len(k) == 2:
+			read_count = k[1]
+			output_file.write(',' + read_count)
+	output_file.write('\n')
+
+# MAIN
+print 
+print
+print
+
+from sys import argv
+
+#Info about what you should write in the command line
+if argv[1] == 'h':
+	print 'To start the program you should write' + '\n' + './Convert_files /path/to/files/*.lng <name_on_the_output_file>'
+
+#Starts the process
+else:
+	output_file_name = argv[len(argv)-1]
+	output_file= open(output_file_name, 'w+')
+
+	#create the header for the csv-file
+	output_file.write('Sample,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36' + '\n')
+	start = read_input_files(argv)
+
+	output_file.close()
+	print "A file called %s.fa is generated in this directory." % output_file_name
+
+```
+
 ## 2015-03-09
 Seminar 3: poster presentation. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
 
