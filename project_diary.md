@@ -75,7 +75,9 @@ Seminar 3: poster presentation. The main things to remember is to not add too mu
 
 We looked at the results from the projects that are done. We found a file that had each samples length count, we can use this to create the heatmap. These are located in six different folders, one for each project. Example for Simon's data:
 
+```
 /proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data/A.Simon_14_01/lengths
+```
 
 This length counts are not located in a long fastaQC-file as the files we looked at yesterday. This might make the script that should convert the data from all 113 samples into the right format easier. 
 
@@ -94,7 +96,7 @@ I read the article for seminar 3 about poster presentation and looked at some sc
 I tryed to write a script that will convert the data from all the different fastaQC-files and make them into a format that R can read. But I had some problems with the extraction of the right data from the files. I need to figure out a way to do that. 
 
 3/6 projects are now finished in Uppmax. 
-If I write jobinfo -u guilc I can see the onces that are still running. 
+If I write *jobinfo -u guilc* I can see the onces that are still running. 
 
 Yim succeded to fix the heat map for project 1 yesterday, yay! I can't load gplot (which is needed for some of the heatmap tutorials) since I have an older version of R. That was the reason to why I couln't get heatmap.2() to work. But now, on Yim's heatmap, the colors depend on every column which mean that we can see that there are more reads of some lengths. 
 
@@ -109,22 +111,17 @@ First we wanted to do all samples in the same heat map, but the different projec
 We converted the values into two fiels (called P1len.txt and P2len.txt for project 1 and 2 respectivelly), where each row corresponded to different samples and each value were separated by ",". 
 I worked on Project 2, and Yim worked on project 1.
 I used the following commands:
-
+```
 test <- read.csv("P2len.txt", sep = ",")
-
 row.names(test) <-test$Sample
-
 test <- test[,2:35]
-
-We wanted to change the columns names (they were all the format X18, X19 and so on). 
+#We wanted to change the columns names (they were all the format X18, X19 and so on). 
 colnames(test) <- c(18:51)
-
 test_matrix <- data.matrix(test)
 
+#To create the heatmap. I added a title called Length Distribution and x-label and y-label. 
 test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", xlab = "Length Distribution", ylab = "Sample")
-
-I added a title called Length Distribution and x-label and y-label. 
-
+```
 I also wanted to add a dendrogram to the rows, but it seems like I need to use heatmap.2() and I can't figure out how to install that package. It shouldn't be that hard but I just isn't working. 
 If I get it to work, the last command should be: 
 test_heatmap <-heatmap.2(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", dendrogram = "rows")
@@ -133,7 +130,7 @@ We tryed to fix the layout of the plots by changing the margins and so on.
 
 There were however some things in the two heatmaps that we didn't understand. The color for a sample didn't become brighter where they corresponded to a high count. We realized that the color described each column distribution. If a sample has a higher count than the other samples at a length of 18, that would be indicated by a brighter color. But if the samples count on the length 22 was much higher, but the difference between that sample and the other samples was smaller, the color would not be that bright. We don't want each column to have a color distribution relative to that particular length, we want the whole heatmap to have the same color for the same count. We need to figure out how to do that. 
 
-Uppmax is up and Phil has given us access to the application project b2013064. Guillermo has created a directory /proj/b2013064/nobackup/BB2490_KTH_miRNA_project where all our data and Marc Friedländer's pipeline SMARTAR are located. Neither me nor Yim can however access that folder at the moment. The final dataset that we will analyze consists of six projects with 113 samples in total.
+Uppmax is up and Phil has given us access to the application project b2013064. Guillermo has created a directory */proj/b2013064/nobackup/BB2490_KTH_miRNA_project* where all our data and Marc Friedländer's pipeline SMARTAR are located. Neither me nor Yim can however access that folder at the moment. The final dataset that we will analyze consists of six projects with 113 samples in total.
 
 ## 2015-02-04
 Uppmax is down. 
@@ -146,28 +143,24 @@ We decides to do a heat map over length distribution that we have for the two pr
 I started to try to understand how to create a heat map.
 I used some available Basketball statistics, located in the following link: http://datasets.flowingdata.com/ppg2008.csv
 
+```
 test <- read.csv("http://datasets.flowingdata.com/ppg2008.csv", sep = ",")
 
-To sort the data. I sorted a column called PTS, but you can sort any column.
-
+#To sort the data. I sorted a column called PTS, but you can sort any column.
 test <- test[order(test$PTS),]
 
-To name each row according to one of the columns (the column "name" in this case)
-
+#To name each row according to one of the columns (the column "name" in this case)
 row.names(test) <-test$Name
 
-To get rid of the column that stores the names (since we called the row according to the name, I wont need that anymore)
-
+#To get rid of the column that stores the names (since we called the row according to the name, I wont need that anymore)
 test <- test[,2:20]
 
-To change the data into a matrix format
-
+#To change the data into a matrix format
 test_matrix <- data.matrix(test)
 
-Create the heatmap!
-
+#Create the heatmap!
 test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10))
-
+```
 The next step is to do this on our data. 
 
 I also showed Yim how she could create a heat map, and how to use R. 
@@ -193,11 +186,11 @@ Me and Yim signed the NDA form which means that we are allowed access to the dat
 I copied the data to my home directory in Uppmax. 
 
 We also decided to use GitHub. Guillermo has created a project directory and I can add it by using the following commands:
-
+```
 git remote add guillermo https://github.com/guillermo-carrasco/bio_data_analysis.git
 
 git pull guillermo master 
-
+```
 ## 2015-02-25
 Read two articles:
 * Next Generation sequencing of miRNAs – Strategies, Resources and Methods
