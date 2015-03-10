@@ -1,6 +1,6 @@
 # Project Diary
 ## 2015-03-09
-Seminar 3. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
+Seminar 3: poster presentation. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
 
 We looked at the results from the projects that are done. We found a file that had each samples length count, we can use this to create the heatmap. These are located in six different folders, one for each project. Example for Simon's data:
 
