@@ -1,4 +1,61 @@
 # Project Diary
+## 2015-03-13
+Guillermo has looked at the results and he also thinks they look weird. There are lots of errors in the log and the accual summary reports haven't been generated. Guillermo will recreate the steps without doing the whole analysis again. Where waiting for uppmax to start to job...
+
+## 2015-03-12
+Guillermo has made a summary over which steps and tools the pipeline uses. 
+The quality control step uses two binaries called fastx_quality_stats and fastq_quality_boxplot_graph.sh. We need to understand what those are. 
+
+I found this info (http://hannonlab.cshl.edu/fastx_toolkit/commandline.html): 
+FASTX Statistics
+
+	$ fastx_quality_stats -h
+	usage: fastx_quality_stats [-h] [-i INFILE] [-o OUTFILE]
+
+	version 0.0.6 (C) 2008 by Assaf Gordon (gordon@cshl.edu)
+	   [-h] = This helpful help screen.
+	   [-i INFILE]  = FASTA/Q input file. default is STDIN.
+	                  If FASTA file is given, only nucleotides
+			  distribution is calculated (there's no quality info).
+	   [-o OUTFILE] = TEXT output file. default is STDOUT.
+
+	The output TEXT file will have the following fields (one row per column):
+		column	= column number (1 to 36 for a 36-cycles read solexa file)
+		count   = number of bases found in this column.
+		min     = Lowest quality score value found in this column.
+		max     = Highest quality score value found in this column.
+		sum     = Sum of quality score values for this column.
+		mean    = Mean quality score value for this column.
+		Q1	= 1st quartile quality score.
+		med	= Median quality score.
+		Q3	= 3rd quartile quality score.
+		IQR	= Inter-Quartile range (Q3-Q1).
+		lW	= 'Left-Whisker' value (for boxplotting).
+		rW	= 'Right-Whisker' value (for boxplotting).
+		A_Count	= Count of 'A' nucleotides found in this column.
+		C_Count	= Count of 'C' nucleotides found in this column.
+		G_Count	= Count of 'G' nucleotides found in this column.
+		T_Count	= Count of 'T' nucleotides found in this column.
+		N_Count = Count of 'N' nucleotides found in this column.
+		max-count = max. number of bases (in all cycles)
+
+FASTQ Quality Chart
+
+	$ fastq_quality_boxplot_graph.sh -h
+	Solexa-Quality BoxPlot plotter
+	Generates a solexa quality score box-plot graph 
+
+	Usage: /usr/local/bin/fastq_quality_boxplot_graph.sh [-i INPUT.TXT] [-t TITLE] [-p] [-o OUTPUT]
+
+	  [-p]           - Generate PostScript (.PS) file. Default is PNG image.
+	  [-i INPUT.TXT] - Input file. Should be the output of "solexa_quality_statistics" program.
+	  [-o OUTPUT]    - Output file name. default is STDOUT.
+	  [-t TITLE]     - Title (usually the solexa file name) - will be plotted on the graph.
+
+## 2015-03-11
+Trying to look into the data that the pipeline has generated in order to get some ideas of what we have. All projects are however not finished yet. 
+
+
 ## 2015-03-10
 I created a python script that converts all the 113 lng-files with length distribution into one single csv-file that can be used when creating a heatmap. 
 ```
@@ -69,6 +126,8 @@ else:
 	print "A file called %s.fa is generated in this directory." % output_file_name
 
 ```
+
+Of our six projects are two projects (J.Lundeberg_14_18 and O.Larsson_14_04) are still running, the rest are done. We are waiting for those to finish. The err-files for the finished projects look however a bit strange. I have asked Guillermo about his opinion. The out-files are also empty which seems odd.  
 
 ## 2015-03-09
 Seminar 3: poster presentation. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
