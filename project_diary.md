@@ -2,6 +2,8 @@
 ## 2015-03-13
 Guillermo has looked at the results and he also thinks they look weird. There are lots of errors in the log and the accual summary reports haven't been generated. Guillermo will recreate the steps without doing the whole analysis again. Where waiting for uppmax to start to job...
 
+It seems like the qulity control step with fastx_quality_stats and fastq_quality_boxplot_graph.sh creates a boxplor with quality score vs read position. 
+
 ## 2015-03-12
 Guillermo has made a summary over which steps and tools the pipeline uses. 
 The quality control step uses two binaries called fastx_quality_stats and fastq_quality_boxplot_graph.sh. We need to understand what those are. 
