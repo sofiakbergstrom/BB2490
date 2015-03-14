@@ -1,4 +1,13 @@
 # Project Diary
+## 2015-03-14
+The jobs wont start on Uppmax until moday. We can change the time allocation but then we risk that the job is killed before it finishes. Guillermo send some jobs anyway with shorter allocation time and they will soon start!! =D START_TIME 2015-03-15T02:57:00
+This mean that we should have everything tomorrow. 
+
+We think however that the read count for the length distribution that we already have is correct. 
+I tryed to run the script I wrote that merges all the length distributions from all samples of all projects into one csv file. First I did it on Uppmax, it started off well and did it in a successful way for some of the projects but when it came to the project called Lundeberg it stopped and said "Permission denied". Don't know why. 
+
+Guillermo sent both Yim and me a .tar with all the length counts instead, and when I tryed the scipt locally it worked. This mean that we have a csv file with every read count between 18 and 36 bp for all 113 samples from the 6 projects. I sent it to Yim and Guillermo. It has some strange numbers however, many 0 and 1 in Lundebergs project. Guillermo said that it was a comment for this project "Some samples have low RIN value and we wonder if they should be treated with RiboZero prior to library prep". I will look into what that means tomorrow.  
+
 ## 2015-03-13
 Guillermo has looked at the results and he also thinks they look weird. There are lots of errors in the log and the accual summary reports haven't been generated. Guillermo will recreate the steps without doing the whole analysis again. Where waiting for uppmax to start to job...
 
@@ -59,6 +68,8 @@ Trying to look into the data that the pipeline has generated in order to get som
 
 
 ## 2015-03-10
+Yim will not be in Sweden until the project should be finished, and you can't connect to Uppmax from abroad. This means that we have to come up with some solution of how she can access the data.  
+
 I created a python script that converts all the 113 lng-files with length distribution into one single csv-file that can be used when creating a heatmap. 
 ```
 #! /usr/bin/env python
