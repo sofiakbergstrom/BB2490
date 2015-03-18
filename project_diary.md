@@ -1,4 +1,29 @@
 # Project Diary
+## 2015-03-17
+Uppmax is down since their main computer room's switch broke. That is a problem. 
+We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
+
+Me and Guillermo had a meeting with Phil and discussed the project. We discussed the heatmaps color range and why it is more convienient to use a color gradient instead of use three distinct colors that corresponded to colorbreaks that we determine by our selves. You don't want to alter the heatmap in a way that makes it looks better than the actual result. It is a bit fishy. 
+
+I looked through the contamination results from Marc's pipieline. The reads are mapped against sponges, nematodes, insects, lophotrochozoa, echinoderms, fish, bird/ reptiles, rodents and primates.  
+'''
+Simon: had reptile/bird and rodents in all 21 samples.
+Dixelius: non of the 22 samples matched anything.
+Lundeberg: had primates in all 56 samples.
+Street: had insects in 7/123 samples. The other didn't match anything.
+Larsson: had primates in all 62 samples.
+Pettersson: has primates in all 8 samples.
+'''
+
+So I assume that Lundeberg, Larsson and Petterson had samples from human, and we know that the Simon project consists of samples from a specie of Salamander so those results also make sense.
+
+I don't know why the samples corresponding to Street and Dixelius projects look like that though. I want to know what kind of miRNA did they used. It would be nice to know in order to interpret the result that non or few of their reads mapped.
+
+## 2015-03-16
+We have decided to focus on the heatmap and the contamination part. We want the heatmaps color to be a gradient from white to red where red indicates more reads. 
+
+Marc's pipeline is filtering the reads and removes all read that are longer than 36 bases. One of our aims is to try to get a hunch of how bad the libary prep was for the six projects (we know thay they was bad), which means that we want to know how many reads we had that was really long. In the libary prep is adapters ligated to the ends of each fragment and a size selection performed. If the size selection didn't worked properly, too long fragments will still be present. When the fragments are sequenced, the once that are too long will not be read completely. This means that the adapters wont be included in the read. When we then are trimming the reads, when we are removing the adapters, we will get a number of reads that haven't been trimmed (since they doesn't have any adapter to remove) and that number can be compared to the number of trimmed reads. This will be a indication of how suffcient the libary prep was.    
+
 ## 2015-03-14
 The jobs wont start on Uppmax until moday. We can change the time allocation but then we risk that the job is killed before it finishes. Guillermo send some jobs anyway with shorter allocation time and they will soon start!! =D START_TIME 2015-03-15T02:57:00
 This mean that we should have everything tomorrow. 
