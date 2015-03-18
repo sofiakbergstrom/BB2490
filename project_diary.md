@@ -3,6 +3,85 @@
 Uppmax is down since their main computer room's switch broke. That is a problem. 
 We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
 
+The output after cutadapt looks like this:
+'''
+cutadapt version 1.5
+Command line parameters: -f fastq -a TGGAATTCTCGGGTGCCAAGG -q 10 --match-read-wildcards -O 3 -m 18 -o /scratch/47530/miRNAtmp_62NDp7/MERGED_P962_101_ATCACG_L001_R1_001_trimmed.fq /scratch/47530/miRNAtmp_62NDp7/MERGED_P962_101_ATCACG_L001_R1_001.fastq
+Maximum error rate: 10.00%
+   No. of adapters: 1
+   Processed reads:     18911354
+   Processed bases:    964479054 bp (964.5 Mbp)
+     Trimmed reads:      2013503 (10.6%)
+   Quality-trimmed:      3302489 bp (3.3 Mbp) (0.34% of total)
+     Trimmed bases:     46118756 bp (46.1 Mbp) (4.78% of total)
+   Too short reads:       321000 (1.7% of processed reads)
+    Too long reads:            0 (0.0% of processed reads)
+        Total time:    306.74 s
+     Time per read:      0.016 ms
+
+=== Adapter 1 ===
+
+Adapter 'TGGAATTCTCGGGTGCCAAGG', length 21, was trimmed 2013503 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-19 bp: 1; 20-21 bp: 2
+
+Overview of removed sequences
+length    count    expect    max.err    error counts
+3    44502    295489.9    0    44502
+4    34837    73872.5    0    34837
+5    83042    18468.1    0    83042
+6    39927    4617.0    0    39927
+7    60776    1154.3    0    60776
+8    62437    288.6    0    62437
+9    59197    72.1    0    58992 205
+10    96271    18.0    1    93788 2483
+11    65293    4.5    1    64036 1257
+12    46121    1.1    1    44984 1137
+13    30409    0.3    1    29609 800
+14    27116    0.1    1    26647 469
+15    67770    0.0    1    66668 1102
+16    42372    0.0    1    41469 903
+17    43587    0.0    1    42428 1159
+18    25449    0.0    1    24609 811 29
+19    38346    0.0    1    36980 1328 38
+20    35312    0.0    2    33593 1255 464
+21    29634    0.0    2    28160 1149 325
+22    28959    0.0    2    27525 1086 348
+23    23504    0.0    2    22116 979 409
+24    21952    0.0    2    20652 886 414
+25    18489    0.0    2    17392 790 307
+26    21235    0.0    2    19985 834 416
+27    49785    0.0    2    47348 1957 480
+28    93541    0.0    2    89249 3409 883
+29    288311    0.0    2    275332 10270 2709
+30    106926    0.0    2    102582 3568 776
+31    70897    0.0    2    67926 2459 512
+32    23833    0.0    2    22872 783 178
+33    19395    0.0    2    18623 581 191
+34    18476    0.0    2    17657 552 267
+35    17718    0.0    2    17004 585 129
+36    17850    0.0    2    17079 641 130
+37    17336    0.0    2    16582 619 135
+38    15495    0.0    2    14703 582 210
+39    14141    0.0    2    13512 492 137
+40    14581    0.0    2    13824 622 135
+41    12524    0.0    2    11781 644 99
+42    10737    0.0    2    10031 542 164
+43    13263    0.0    2    12772 399 92
+44    11209    0.0    2    10641 475 93
+45    6419    0.0    2    6090 255 74
+46    2691    0.0    2    2511 130 50
+47    864    0.0    2    750 71 43
+48    670    0.0    2    536 84 50
+49    1054    0.0    2    739 172 143
+50    744    0.0    2    562 128 54
+51    138506    0.0    2    120276 16363 1867
+
+Analysis complete for MERGED_P962_101_ATCACG_L001_R1_001_trimmed.fq
+'''
+Guillermo will calculate the remaning length of the read and create a file for each sample that contains the length in column 1 and the count in column 2. These files will be organized according to different projects, i.e. one folder per project that contains one file per sample. I will then make a csv file from all that and send it to Yim that will try to fix the color and so on on the heatmap. 
+
 Me and Guillermo had a meeting with Phil and discussed the project. We discussed the heatmaps color range and why it is more convienient to use a color gradient instead of use three distinct colors that corresponded to colorbreaks that we determine by our selves. You don't want to alter the heatmap in a way that makes it looks better than the actual result. It is a bit fishy. 
 
 I looked through the contamination results from Marc's pipieline. The reads are mapped against sponges, nematodes, insects, lophotrochozoa, echinoderms, fish, bird/ reptiles, rodents and primates.  
