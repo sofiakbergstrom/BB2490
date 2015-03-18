@@ -2,6 +2,15 @@
 ## 2015-03-18
 Today we will finish the poster! =D
 
+We want to have a barplot of one samples length distribution side by side with heatmap in order to make it clear what the heatmap really represents. I made one in R over the length that was removed (just to learn how to do it). When Guillermo have created the files with the remaining sequnce length, I will use that instead.
+```
+l <- read.csv('make_barplot.txt')
+count <- l$Count
+png('length_dist.png')
+barplot(count, xlab = 'Length', ylab = 'Count', main = 'Length Distribution', col = 'lightblue'. names.arg = c(3:51))
+dev.off()
+```
+
 ## 2015-03-17
 Uppmax is down since their main computer room's switch broke. That is a problem. 
 We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
