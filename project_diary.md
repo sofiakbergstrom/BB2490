@@ -10,6 +10,7 @@ png('length_dist.png')
 barplot(count, xlab = 'Length', ylab = 'Count', main = 'Length Distribution', col = 'lightblue'. names.arg = c(3:51))
 dev.off()
 ```
+![Length Distribution](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/Length_distribution.png)
 
 ## 2015-03-17
 Uppmax is down since their main computer room's switch broke. That is a problem. 
