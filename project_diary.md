@@ -7,7 +7,7 @@ Uppmax is down since their main computer room's switch broke. That is a problem.
 We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
 
 The output after cutadapt looks like this:
-´´´
+```
 cutadapt version 1.5
 Command line parameters: -f fastq -a TGGAATTCTCGGGTGCCAAGG -q 10 --match-read-wildcards -O 3 -m 18 -o /scratch/47530/miRNAtmp_62NDp7/MERGED_P962_101_ATCACG_L001_R1_001_trimmed.fq /scratch/47530/miRNAtmp_62NDp7/MERGED_P962_101_ATCACG_L001_R1_001.fastq
 Maximum error rate: 10.00%
@@ -82,7 +82,7 @@ length    count    expect    max.err    error counts
 51    138506    0.0    2    120276 16363 1867
 
 Analysis complete for MERGED_P962_101_ATCACG_L001_R1_001_trimmed.fq
-´´´
+```
 We get the number of trimmed reads  *Trimmed reads:      2013503 (10.6%)*
 And the overview is over trimmed sequnces. In the first row 3 bases was removed in 44502 reads, which menas that we need to take the whole read length minus 3 in order to get the remaining length of the read. 
 
@@ -91,14 +91,14 @@ Guillermo will calculate the remaning length of the read and create a file for e
 Me and Guillermo had a meeting with Phil and discussed the project. We discussed the heatmaps color range and why it is more convienient to use a color gradient instead of use three distinct colors that corresponded to colorbreaks that we determine by our selves. You don't want to alter the heatmap in a way that makes it looks better than the actual result. It is a bit fishy. 
 
 I looked through the contamination results from Marc's pipieline. The reads are mapped against sponges, nematodes, insects, lophotrochozoa, echinoderms, fish, bird/ reptiles, rodents and primates.  
-´´´
+```
 Simon: had reptile/bird and rodents in all 21 samples.
 Dixelius: non of the 22 samples matched anything.
 Lundeberg: had primates in all 56 samples.
 Street: had insects in 7/123 samples. The other didn't match anything.
 Larsson: had primates in all 62 samples.
 Pettersson: has primates in all 8 samples.
-´´´
+```
 
 So I assume that Lundeberg, Larsson and Petterson had samples from human, and we know that the Simon project consists of samples from a specie of Salamander so those results also make sense.
 
