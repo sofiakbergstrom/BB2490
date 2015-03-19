@@ -41,6 +41,8 @@ Step 5: Write ![Figure text](url) in my diary whereever I wanted the picture to 
 ```
 Yay! It works! I can add pictures! =D
 
+I think that parts of both the first pipeline and then Marc's pipeline should be used in order to check the quality of miRNA data. cutadapt is much faster than using a bunch of different tools from the FASTX toolbox, which mean that I should start with that tool. The contamination screening used in Marc's pipeline was a very nice control of the sample. I think SeqMonk also should be added to that pipeline after alignment with Bowtie. Bowtie 1 is a good aligner since the reads will be short. Many of the things that are generated through Marc's pipeline is created by using FASTQC in on go. 
+
 ## 2015-03-17
 Uppmax is down since their main computer room's switch broke. That is a problem. 
 We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
@@ -146,7 +148,9 @@ I don't know why the samples corresponding to Project 2,4 projects look like tha
 ## 2015-03-16
 We have decided to focus on the heatmap and the contamination part. We want the heatmaps color to be a gradient from white to red where red indicates more reads. 
 
-Marc's pipeline is filtering the reads and removes all read that are longer than 36 bases. One of our aims is to try to get a hunch of how bad the libary prep was for the six projects (we know thay they was bad), which means that we want to know how many reads we had that was really long. In the libary prep is adapters ligated to the ends of each fragment and a size selection performed. If the size selection didn't worked properly, too long fragments will still be present. When the fragments are sequenced, the once that are too long will not be read completely. This means that the adapters wont be included in the read. When we then are trimming the reads, when we are removing the adapters, we will get a number of reads that haven't been trimmed (since they doesn't have any adapter to remove) and that number can be compared to the number of trimmed reads. This will be a indication of how suffcient the libary prep was.    
+Marc's pipeline is filtering the reads and removes all read that are longer than 36 bases. The toolbox FASTX is used and specifically fastx_trimmer is used to do this ```fastx_trimmer -f 1 -l 36```. One of our aims is to try to get a hunch of how bad the libary prep was for the six projects (we know thay they was bad), which means that we want to know how many reads we had that was really long. In the libary prep is adapters ligated to the ends of each fragment and a size selection performed. If the size selection didn't worked properly, too long fragments will still be present. When the fragments are sequenced, the once that are too long will not be read completely. This means that the adapters wont be included in the read. When we then are trimming the reads, when we are removing the adapters, we will get a number of reads that haven't been trimmed (since they doesn't have any adapter to remove) and that number can be compared to the number of trimmed reads. This will be a indication of how suffcient the libary prep was. 
+
+The toolbox FASTX is also used to remove low quality reads and trimming the adapters. This does cutadapt also do but just by adding different options. For example can the option -q specify the quality cutoff you want to use. 
 
 ## 2015-03-14
 The jobs wont start on Uppmax until moday. We can change the time allocation but then we risk that the job is killed before it finishes. Guillermo send some jobs anyway with shorter allocation time and they will soon start!! =D START_TIME 2015-03-15T02:57:00
@@ -387,6 +391,17 @@ Yim's flight was delayed so I and Guillermo did the presentation on out own. I p
 ## 2015-03-02
 Me and Guillermo created the presenation for seminar2. 
 One recommendation for the other project will be to use Trello and one problem that we have had are the limited space available at our home directories at Uppmax. 
+
+The pipeline we will use, which is the one that they uses at scilife are:
+```
+	1. Remove adapters with cutadapt
+	2. Basics stats with FASTQC
+	3. Read alignment with Bowtie
+	4. Duplication rates with Picard
+	5. rRNA contamination with featureCounts
+	6. Overlap with annotation types, mRNA, rRNA
+	7. Insert and alignment length with Picard
+```
 
 ## 2015-02-26
 We has a project meeting were we decided to use trello.com as our project platform were we could discuss problems, add things that we should do and so on. Guillermo had tested FASTQC and showed us the results. The average length was around 50, but this is probably due to the fact that the adapters hadn't been removed. 
