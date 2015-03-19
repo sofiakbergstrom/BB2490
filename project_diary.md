@@ -3,6 +3,10 @@
 This will be the printed version of the poster:
 ![Printed version on layout of the poster](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/miRNA_poster_printed_version.jpg)
 
+For the heatmap, the number of reads that are 51 nt long actually corresponds to every fragment that was 51 nt or longer. 
+
+It is sad that the project already is over... One month is not a very long time. The next step, in order to improve our result, would probably have been to calculate a ratio for each sample with (number of reads below a certain length /the number of reads above that threshold). Then a quality control criteria could have been determined and we could have draws a conclusion like "This many out of 113 samples failed the threshold"
+
 We had a meeting where we discussed the project to prepare for the presenation tomorrow. 
 
 ## 2015-03-18
