@@ -235,11 +235,7 @@ def convert_file(lng_file, project, sample):
 			output_file.write(',' + read_count)
 	output_file.write('\n')
 
-# MAIN
-print 
-print
-print
-
+#################MAIN###################
 from sys import argv
 
 #Info about what you should write in the command line
@@ -273,6 +269,7 @@ Me and Yim was suppose to look at the data that has been created and try to figu
 
 I made a first draft on the poster according to the things I think is important (Clear, "airy", easy to follow).
 
+![First version on layout of the poster](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/miRNA_poster_vers1.jpg)
 
 
 
