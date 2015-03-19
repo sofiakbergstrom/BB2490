@@ -1,4 +1,8 @@
 # Project Diary
+## 2015-03-19
+This will be the printed version of the poster:
+![Printed version on layout of the poster]()
+
 ## 2015-03-18
 Today we will finish the poster! =D
 
@@ -269,7 +273,7 @@ Me and Yim was suppose to look at the data that has been created and try to figu
 
 I made a first draft on the poster according to the things I think is important (Clear, "airy", easy to follow).
 
-![First version on layout of the poster]()
+![First version on layout of the poster](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/miRNA_poster_version1.jpg)
 
 
 
