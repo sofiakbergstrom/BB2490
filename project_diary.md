@@ -22,6 +22,19 @@ Me Guillermo met and worked on the poster. First we wanted to finish the csv for
 
 For the poster we worked in the different texts and I created the boxplot for the length distribution for one of the samples. 
 
+Guillermo had already told me that i should use ```![Figure text](url)``` if I wanted to add picture. But I couldn't figure out how to do it anyway. Today he showed me how it was done:
+```
+Step 1: Add picture to my local git folder 
+Step 2: Add the pictures to git
+		git add Images/picture_name.png
+		git commit -m 'added picture'
+		git push origin master
+Step 3: Open the pic and choose the option RAW
+Step 4: Copy the url for the picture
+Step 5: Write ![Figure text](url) in my diary whereever I wanted the picture to be placed
+```
+Yay! It works! I can add pictures! =D
+
 ## 2015-03-17
 Uppmax is down since their main computer room's switch broke. That is a problem. 
 We have decided to use cutadapt and fastQC for all project (like our previosly plan we had in the beginning of the project). We want to do this in order to see the length distribution and number of trimmed reads with out removing any data. Fortunately, Uppmax started to work again so we could do this. 
@@ -281,9 +294,6 @@ I made a first draft on the poster according to the things I think is important 
 
 ![First version on layout of the poster](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/miRNA_poster_version1.jpg)
 
-
-
-
 ## 2015-03-09
 Guillermo teached me how to add pictures to the diary. I will add some that I wanted to upload last week.
 I can't connect to csc where my txt-file is located with the data for project 2. I will try again later today. 
@@ -305,7 +315,7 @@ I'll continue trying to figure out how to change the heatmaps and how to convert
 Our goal today is to create heatmaps on our data. Me and Yim tryed to do this on Project 1 and Project 2. We used the length distribution that was located in fastaqc_data.txt file that was created for each sample when doing the FastaQC part. We extracted the length distribution and put in a file and created a heat map for each project. 
 
 First we wanted to do all samples in the same heat map, but the different projects didn't range between the same length. Project 1 ranges between a length of 18 to 101, and prpject 2 ranges from 18-51. An other difference is that project 1 takes steps of two length at a time, they used 18-19, 20-21, 22-23 an so on. And project 2 have different length distribution number for each length. 
-We converted the values into two fiels (called P1len.txt and P2len.txt for project 1 and 2 respectivelly), where each row corresponded to different samples and each value were separated by ",". 
+We converted the values into two files (called P1len.txt and P2len.txt for project 1 and 2 respectivelly), where each row corresponded to different samples and each value were separated by ",". 
 I worked on Project 2, and Yim worked on project 1.
 I used the following commands:
 ```
@@ -319,6 +329,8 @@ test_matrix <- data.matrix(test)
 #To create the heatmap. I added a title called Length Distribution and x-label and y-label. 
 test_heatmap <-heatmap(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", xlab = "Length Distribution", ylab = "Sample")
 ```
+![Heatmap test](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/Heatmap_test.png)
+
 I also wanted to add a dendrogram to the rows, but it seems like I need to use heatmap.2() and I can't figure out how to install that package. It shouldn't be that hard but I just isn't working. 
 If I get it to work, the last command should be: 
 test_heatmap <-heatmap.2(test_matrix, Rowv = NA, Colv = NA, col = heat.colors(256), scale = "column", margins=c(5,10), main = "Length Distribution", dendrogram = "rows")
