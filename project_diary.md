@@ -1,7 +1,9 @@
 # Project Diary
 ## 2015-03-19
 This will be the printed version of the poster:
-![Printed version on layout of the poster]()
+![Printed version on layout of the poster](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/miRNA_poster_printed_version.jpg)
+
+We had a meeting where we discussed the project to prepare for the presenation tomorrow. 
 
 ## 2015-03-18
 Today we will finish the poster! =D
@@ -15,6 +17,10 @@ barplot(count, xlab = 'Length', ylab = 'Count', main = 'Length Distribution', co
 dev.off()
 ```
 ![Length Distribution](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/Length_distribution.png)
+
+Me Guillermo met and worked on the poster. First we wanted to finish the csv for Yim so that she could work on the heatmap. We discovered some bugs in the scipt and Guillermo fixed that and then we run the files (with length distribution per sample) through my script that converted them all into one csv file. This was sent to Yim. 
+
+For the poster we worked in the different texts and I created the boxplot for the length distribution for one of the samples. 
 
 ## 2015-03-17
 Uppmax is down since their main computer room's switch broke. That is a problem. 
