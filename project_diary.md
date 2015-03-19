@@ -96,23 +96,23 @@ Analysis complete for MERGED_P962_101_ATCACG_L001_R1_001_trimmed.fq
 We get the number of trimmed reads  *Trimmed reads:      2013503 (10.6%)*
 And the overview is over trimmed sequnces. In the first row 3 bases was removed in 44502 reads, which menas that we need to take the whole read length minus 3 in order to get the remaining length of the read. 
 
-Guillermo will calculate the remaning length of the read and create a file for each sample that contains the length in column 1 and the count in column 2. These files will be organized according to different projects, i.e. one folder per project that contains one file per sample. I will then make a csv file from all that and send it to Yim that will try to fix the color and so on on the heatmap. 
+Guillermo will create a file for each sample that contains the length in column 1 and the count in column 2. These files will be organized according to different projects, i.e. one folder per project that contains one file per sample. I will then make a csv file from all that and send it to Yim that will try to fix the color and so on on the heatmap. 
 
 Me and Guillermo had a meeting with Phil and discussed the project. We discussed the heatmaps color range and why it is more convienient to use a color gradient instead of use three distinct colors that corresponded to colorbreaks that we determine by our selves. You don't want to alter the heatmap in a way that makes it looks better than the actual result. It is a bit fishy. 
 
 I looked through the contamination results from Marc's pipieline. The reads are mapped against sponges, nematodes, insects, lophotrochozoa, echinoderms, fish, bird/ reptiles, rodents and primates.  
 ```
-Simon: had reptile/bird and rodents in all 21 samples.
-Dixelius: non of the 22 samples matched anything.
-Lundeberg: had primates in all 56 samples.
-Street: had insects in 7/123 samples. The other didn't match anything.
-Larsson: had primates in all 62 samples.
-Pettersson: has primates in all 8 samples.
+Project 1: had reptile/bird and rodents in all 21 samples.
+Project 2: non of the 22 samples matched anything.
+Project 3: had primates in all 56 samples.
+Project 4: had insects in 7/123 samples. The other didn't match anything.
+Project 5: had primates in all 62 samples.
+Project 6: has primates in all 8 samples.
 ```
 
-So I assume that Lundeberg, Larsson and Petterson had samples from human, and we know that the Simon project consists of samples from a specie of Salamander so those results also make sense.
+So I assume that Project 3,5,6 had samples from human, and we know that the Project 1 project consists of samples from some reptile so those results also make sense.
 
-I don't know why the samples corresponding to Street and Dixelius projects look like that though. I want to know what kind of miRNA did they used. It would be nice to know in order to interpret the result that non or few of their reads mapped.
+I don't know why the samples corresponding to Project 2,4 projects look like that though. I want to know what kind of miRNA did they used. It would be nice to know in order to interpret the result that non or few of their reads mapped.
 
 ## 2015-03-16
 We have decided to focus on the heatmap and the contamination part. We want the heatmaps color to be a gradient from white to red where red indicates more reads. 
@@ -209,18 +209,18 @@ def read_input_files(argv):
 #Function 2: This function gets the right sample name and then sends the info to function 3
 def get_sample_name(lng_file, name):
 	sample = name[len(name)-7:len(name)-4]
-	if 'Simon' in name:
-		project = 'A.Simon'
-	elif 'Dixelius' in name:
-		project = 'C.Dixelius'
-	elif 'Lundeberg' in name:
-		project = 'J.Lundeberg'
-	elif 'Street' in name:
-		project = 'N.Street'
-	elif 'Larsson' in name:
-		project = 'O.Larsson'
-	elif 'Pettersson' in name:
-		project = 'U.Pettersson'
+	if 'Project1' in name:
+		project = 'Project1'
+	elif 'Project2' in name:
+		project = 'Project2'
+	elif 'Project3' in name:
+		project = 'Project3'
+	elif 'Project4' in name:
+		project = 'Project4'
+	elif 'Project5' in name:
+		project = 'Project5'
+	elif 'Project6' in name:
+		project = 'Project6'
 	else:
 		print 'Something is wrong'
 	function3 = convert_file(lng_file, project, sample)
@@ -260,22 +260,20 @@ else:
 
 ```
 
-Of our six projects are two projects (J.Lundeberg_14_18 and O.Larsson_14_04) are still running, the rest are done. We are waiting for those to finish. The err-files for the finished projects look however a bit strange. I have asked Guillermo about his opinion. The out-files are also empty which seems odd.  
+Of our six projects are two projects are still running, the rest are done. We are waiting for those to finish. The err-files for the finished projects look however a bit strange. I have asked Guillermo about his opinion. The out-files are also empty which seems odd.  
 
 ## 2015-03-09
 Seminar 3: poster presentation. The main things to remember is to not add too much text, to have a clear structure and don't make the background to messy. It can be nice to add headers to the graphs that we add that describes the conclusion drawn from the picture rather that just have regular headers. The different parts of the poster should easily be found and specially the aim. 
 
-We looked at the results from the projects that are done. We found a file that had each samples length count, we can use this to create the heatmap. These are located in six different folders, one for each project. Example for Simon's data:
-
-```
-/proj/b2013064/nobackup/BB2490_KTH_miRNA_project/data/A.Simon_14_01/lengths
-```
+We looked at the results from the projects that are done. We found a file that had each samples length count, we can use this to create the heatmap. These are located in six different folders, one for each project. 
 
 This length counts are not located in a long fastaQC-file as the files we looked at yesterday. This might make the script that should convert the data from all 113 samples into the right format easier. 
 
 Me and Yim was suppose to look at the data that has been created and try to figure out what we want to do with it to be able to analyse it. But we couldn't connect to Uppmax. 
 
 I made a first draft on the poster according to the things I think is important (Clear, "airy", easy to follow).
+
+
 
 
 
