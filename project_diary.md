@@ -17,16 +17,16 @@ We want to have a barplot of one samples length distribution side by side with h
 l <- read.csv('make_barplot.txt')
 count <- l$Count
 png('length_dist.png')
-barplot(count, xlab = 'Length', ylab = 'Count', main = 'Length Distribution', col = 'lightblue'. names.arg = c(3:51))
+barplot(count, xlab = 'Length', ylab = 'Count', main = 'Length Distribution', col = 'lightblue', names.arg = c(3:51))
 dev.off()
 ```
 ![Length Distribution](https://raw.githubusercontent.com/sofiakbergstrom/BB2490/master/Images/Length_distribution.png)
 
 Me Guillermo met and worked on the poster. First we wanted to finish the csv for Yim so that she could work on the heatmap. We discovered some bugs in the scipt and Guillermo fixed that and then we run the files (with length distribution per sample) through my script that converted them all into one csv file. This was sent to Yim. 
 
-For the poster we worked on the different texts, like introduction, aim, results and conclusion. We decided to have a flowchart for the method. 
+For the poster we worked on the different texts, like introduction, aim, results and conclusion. 
 
-I created the boxplot for the length distribution for one of the samples. We also used the tool SeqMunk on the results from the aligning step in Marc's pipeline. This tool maps the reads against known small RNAs and can thus be used to determine if the reads corresponds to miRNA or if they corresponds to tRNA or snRNA or something else. We added that plot for one sample to the poster. 
+I created the boxplot for the length distribution for one of the samples. We also used the tool SeqMonk on the results from the aligning step in Marc's pipeline. This tool maps the reads against known small RNAs and can thus be used to determine if the reads corresponds to miRNA or if they corresponds to tRNA or snRNA or something else. We added that plot for one sample to the poster. 
 
 Guillermo had already told me that i should use ```![Figure text](url)``` if I wanted to add picture. But I couldn't figure out how to do it anyway. Today he showed me how it was done:
 ```
